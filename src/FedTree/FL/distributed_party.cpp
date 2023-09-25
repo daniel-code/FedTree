@@ -1562,6 +1562,9 @@ void distributed_horizontal_train(DistributedParty& party, FLParam &fl_param) {
             // }
         }
         GHPair party_gh = thrust::reduce(thrust::host, party.booster.gradients.host_data(), party.booster.gradients.host_end());
+        // Add weight to g and h
+        party_gh.g*=party.weight;
+        party_gh.h*=party.weight;
         // send party_gh to server
         party.SendGH(party_gh);
         for (int k = 0; k < fl_param.gbdt_param.tree_per_round; k++) {

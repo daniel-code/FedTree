@@ -113,6 +113,8 @@ public:
     double comm_time = 0;
     double enc_time = 0;
     double comm_size = 0;
+    // add weight of party
+    double weight = 1.0;
     int n_parties;
     std::chrono::high_resolution_clock timer;
 

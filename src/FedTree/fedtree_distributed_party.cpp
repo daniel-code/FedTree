@@ -43,6 +43,9 @@ int main(int argc, char **argv) {
     }
     DistributedParty party(grpc::CreateChannel(fl_param.ip_address + ":50051",
                                                grpc::InsecureChannelCredentials()));
+    // config weight
+    party.weight = std::stod(argv[3]);
+
     party.n_parties = fl_param.n_parties;
     GBDTParam &param = fl_param.gbdt_param;
     DataSet dataset;
