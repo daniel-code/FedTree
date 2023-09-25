@@ -116,9 +116,9 @@ Here are two examples for horizontal FedTree and vertical FedTree.
 # under server machine
 ./build/bin/FedTree-distributed-server ./examples/adult/a9a_horizontal_server.conf
 # under party machine 0
-./build/bin/FedTree-distributed-party ./examples/adult/a9a_horizontal_p0.conf 0
+./build/bin/FedTree-distributed-party ./examples/adult/a9a_horizontal_p0.conf 0 1.0
 # under party machine 1
-./build/bin/FedTree-distributed-party ./examples/adult/a9a_horizontal_p1.conf 1
+./build/bin/FedTree-distributed-party ./examples/adult/a9a_horizontal_p1.conf 1 1.2
 ```
 
 ## Distributed Vertical FedTree
